@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import { routing } from '@/lib/i18n/routing'
 import { ThemeProvider } from '@/components/layout/ThemeProvider'
+import { QueryProvider } from '@/components/layout/QueryProvider'
 import { Toaster } from 'sonner'
 import '@/app/globals.css'
 
@@ -48,10 +49,12 @@ export default async function LocaleLayout({
     <html lang={locale} suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
         <NextIntlClientProvider messages={messages}>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-            {children}
-            <Toaster position="top-center" richColors />
-          </ThemeProvider>
+          <QueryProvider>
+            <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+              {children}
+              <Toaster position="top-center" richColors />
+            </ThemeProvider>
+          </QueryProvider>
         </NextIntlClientProvider>
       </body>
     </html>
