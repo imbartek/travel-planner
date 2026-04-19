@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
 
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { useTemplates } from '@/lib/hooks/useTemplates'
 import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card'
 import { LayoutTemplate } from 'lucide-react'
@@ -11,6 +10,7 @@ import { Link } from '@/lib/i18n/routing'
 export function TemplatesList() {
   const { data: templates, isLoading } = useTemplates()
   const t = useTranslations('templates')
+  const locale = useLocale()
 
   if (isLoading) {
     return <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -33,9 +33,11 @@ export function TemplatesList() {
       {templates.map((template: any) => (
         <Card key={template.id} className="flex flex-col h-full hover:border-primary transition-colors">
           <CardHeader>
-            <CardTitle className="text-xl line-clamp-1">{template.name}</CardTitle>
+            <CardTitle className="text-xl line-clamp-1">
+              {locale === 'pl' ? template.name_pl : template.name_en}
+            </CardTitle>
             <CardDescription className="line-clamp-3 mt-2 h-[60px]">
-              {template.description}
+              {locale === 'pl' ? template.description_pl : template.description_en}
             </CardDescription>
           </CardHeader>
           <CardFooter className="mt-auto pt-4 border-t">

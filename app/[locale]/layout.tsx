@@ -1,6 +1,6 @@
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Roboto } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import { routing } from '@/lib/i18n/routing'
 import { ThemeProvider } from '@/components/layout/ThemeProvider'
@@ -8,14 +8,10 @@ import { QueryProvider } from '@/components/layout/QueryProvider'
 import { Toaster } from 'sonner'
 import '@/app/globals.css'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-})
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+const roboto = Roboto({
+  variable: '--font-roboto',
+  subsets: ['latin', 'latin-ext'],
+  weight: ['300', '400', '500', '700'],
 })
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -36,18 +32,15 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params
 
-  // Ensure that the incoming `locale` is valid
   if (!(routing.locales as readonly string[]).includes(locale)) {
     notFound()
   }
 
-  // Providing all messages to the client
-  // side is the easiest way to get started
   const messages = await getMessages()
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+      <body className={`${roboto.variable} font-sans h-full antialiased`}>
         <NextIntlClientProvider messages={messages}>
           <QueryProvider>
             <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
