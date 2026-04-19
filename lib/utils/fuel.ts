@@ -3,7 +3,7 @@
 /**
  * Przelicza koszt waluty na inną (placeholder na razie lub proste przeliczenie)
  */
-function convert(amount: number, from: string, to: string, rates: Record<string, number>): number {
+export function convert(amount: number, from: string, to: string, rates: Record<string, number>): number {
   if (from === to) return amount
   // Baza to EUR (rates[code] = rate_to_eur)
   const rateFrom = rates[from] || 1
