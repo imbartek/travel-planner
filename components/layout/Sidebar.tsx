@@ -19,7 +19,7 @@ export function Sidebar() {
   return (
     <aside className="hidden flex-col border-r bg-muted/20 md:flex md:w-64">
       <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
-        <Link href="/" className="flex items-center gap-2 font-semibold">
+        <Link href="/trips" className="flex items-center gap-2 font-semibold">
           <Map className="h-6 w-6 text-primary" />
           <span className="text-xl">Travel Planner</span>
         </Link>

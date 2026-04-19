@@ -11,8 +11,7 @@ export function useTrips() {
         .from('trips')
         .select(`
           *,
-          members:trip_members(user_id, role, profiles(display_name, email)),
-          checklist_stats:checklist_items(count)
+          members:trip_members(user_id, role, profiles(display_name, email))
         `)
         .order('date_start', { ascending: false, nullsFirst: false })
       if (error) throw error
