@@ -1,0 +1,225 @@
+{
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "confirm": "Confirm",
+    "back": "Back",
+    "close": "Close",
+    "yes": "Yes",
+    "no": "No",
+    "required": "Required field",
+    "optional": "Optional"
+  },
+  "nav": {
+    "trips": "Trips",
+    "templates": "Templates",
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+  "auth": {
+    "login": {
+      "title": "Log in",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Log in",
+      "noAccount": "Don't have an account?",
+      "signup": "Sign up",
+      "forgotPassword": "Forgot password?"
+    },
+    "signup": {
+      "title": "Create account",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm password",
+      "displayName": "Name (optional)",
+      "submit": "Sign up",
+      "haveAccount": "Already have an account?",
+      "login": "Log in",
+      "passwordMismatch": "Passwords do not match",
+      "checkEmail": "Check your email inbox to verify your account"
+    },
+    "resetPassword": {
+      "title": "Reset password",
+      "email": "Email",
+      "submit": "Send link",
+      "sent": "Password reset link has been sent"
+    }
+  },
+  "trips": {
+    "title": "Your trips",
+    "new": "New trip",
+    "empty": {
+      "title": "You have no trips yet",
+      "description": "Create your first trip to start planning",
+      "action": "Create trip"
+    },
+    "card": {
+      "noDate": "No date",
+      "countries": "{from} → {to}"
+    },
+    "form": {
+      "title": "Title",
+      "titlePlaceholder": "e.g. Trip to Budapest",
+      "countryFrom": "Starting country",
+      "countryTo": "Destination country",
+      "dateStart": "Start date",
+      "dateEnd": "End date",
+      "notes": "Notes",
+      "template": "Template",
+      "noTemplate": "Blank trip"
+    },
+    "tabs": {
+      "overview": "Overview",
+      "route": "Route",
+      "vignettes": "Vignettes",
+      "fuel": "Fuel",
+      "checklist": "Checklist",
+      "expenses": "Expenses",
+      "members": "Members",
+      "settings": "Settings"
+    },
+    "delete": {
+      "title": "Delete trip",
+      "description": "This action cannot be undone. This will permanently delete the '{title}' trip and all its data.",
+      "confirm": "Delete trip"
+    }
+  },
+  "waypoints": {
+    "title": "Route",
+    "add": "Add waypoint",
+    "empty": "Add the first waypoint",
+    "city": "City",
+    "country": "Country",
+    "note": "Note"
+  },
+  "vignettes": {
+    "title": "Vignettes",
+    "add": "Add vignette",
+    "empty": "Add necessary vignettes for the route",
+    "country": "Country",
+    "duration": "Duration",
+    "cost": "Cost",
+    "currency": "Currency",
+    "url": "Purchase link",
+    "note": "Note",
+    "total": "Total"
+  },
+  "fuel": {
+    "title": "Fuel calculator",
+    "carModel": "Car model",
+    "consumption": "Consumption (l/100 km)",
+    "tankSize": "Tank size (l)",
+    "totalDistance": "Distance (km)",
+    "startWithFullTank": "Start with a full tank",
+    "priceSegments": "Fuel prices per country",
+    "addSegment": "Add country",
+    "results": {
+      "fuelNeeded": "Fuel needed",
+      "fuelToRefuel": "Fuel to refuel",
+      "totalCost": "Total cost",
+      "breakdown": "Breakdown"
+    }
+  },
+  "checklist": {
+    "title": "Checklist",
+    "progress": "{done}/{total}",
+    "addItem": "Add item",
+    "addCategory": "Add category",
+    "categories": {
+      "documents": "Documents",
+      "car": "Car",
+      "electronics": "Electronics",
+      "clothing": "Clothing",
+      "firstAid": "First aid",
+      "onTheRoad": "On the road"
+    }
+  },
+  "expenses": {
+    "title": "Expenses",
+    "add": "Add expense",
+    "category": "Category",
+    "label": "Description",
+    "amount": "Amount",
+    "currency": "Currency",
+    "categories": {
+      "transport": "Transport",
+      "accommodation": "Accommodation",
+      "food": "Food",
+      "activities": "Activities",
+      "vignettes": "Vignettes",
+      "fuel": "Fuel",
+      "other": "Other"
+    },
+    "summary": {
+      "title": "Summary",
+      "total": "Total",
+      "byCategory": "By category"
+    }
+  },
+  "members": {
+    "title": "Members",
+    "invite": "Invite",
+    "pending": "Pending invitations",
+    "owner": "Owner",
+    "editor": "Editor",
+    "remove": "Remove",
+    "leave": "Leave trip",
+    "inviteDialog": {
+      "title": "Invite to trip",
+      "email": "Email",
+      "send": "Send invitation",
+      "sent": "Invitation sent"
+    }
+  },
+  "templates": {
+    "title": "Templates",
+    "pick": "Choose template",
+    "useTemplate": "Use template"
+  },
+  "settings": {
+    "title": "Settings",
+    "profile": "Profile",
+    "displayName": "Display name",
+    "preferredLanguage": "Preferred language",
+    "preferredCurrency": "Preferred currency",
+    "notifications": "Notifications",
+    "emailNotifications": "Email notifications",
+    "reminderDaysBefore": "Days before trip",
+    "theme": "Theme",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "themeSystem": "System"
+  },
+  "invitations": {
+    "accept": {
+      "title": "Trip invitation",
+      "processing": "Processing invitation...",
+      "success": "You have joined the trip",
+      "errors": {
+        "notFound": "Invitation does not exist",
+        "expired": "Invitation has expired",
+        "emailMismatch": "Invitation is for a different email address",
+        "alreadyProcessed": "Invitation has already been processed"
+      }
+    }
+  },
+  "pwa": {
+    "install": "Install application",
+    "installed": "Application installed"
+  },
+  "importExport": {
+    "export": "Export JSON",
+    "import": "Import JSON",
+    "importDialog": {
+      "title": "Import trip",
+      "selectFile": "Select JSON file",
+      "invalid": "Invalid file format"
+    }
+  }
+}

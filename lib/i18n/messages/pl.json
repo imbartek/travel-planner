@@ -1,0 +1,225 @@
+{
+  "common": {
+    "save": "Zapisz",
+    "cancel": "Anuluj",
+    "delete": "Usuń",
+    "edit": "Edytuj",
+    "add": "Dodaj",
+    "loading": "Ładowanie...",
+    "error": "Błąd",
+    "success": "Sukces",
+    "confirm": "Potwierdź",
+    "back": "Wróć",
+    "close": "Zamknij",
+    "yes": "Tak",
+    "no": "Nie",
+    "required": "Pole wymagane",
+    "optional": "Opcjonalne"
+  },
+  "nav": {
+    "trips": "Podróże",
+    "templates": "Szablony",
+    "settings": "Ustawienia",
+    "logout": "Wyloguj"
+  },
+  "auth": {
+    "login": {
+      "title": "Zaloguj się",
+      "email": "Email",
+      "password": "Hasło",
+      "submit": "Zaloguj",
+      "noAccount": "Nie masz konta?",
+      "signup": "Zarejestruj się",
+      "forgotPassword": "Nie pamiętasz hasła?"
+    },
+    "signup": {
+      "title": "Utwórz konto",
+      "email": "Email",
+      "password": "Hasło",
+      "confirmPassword": "Powtórz hasło",
+      "displayName": "Imię (opcjonalne)",
+      "submit": "Zarejestruj",
+      "haveAccount": "Masz już konto?",
+      "login": "Zaloguj się",
+      "passwordMismatch": "Hasła się nie zgadzają",
+      "checkEmail": "Sprawdź swoją skrzynkę email i potwierdź rejestrację"
+    },
+    "resetPassword": {
+      "title": "Zresetuj hasło",
+      "email": "Email",
+      "submit": "Wyślij link",
+      "sent": "Link do resetu hasła został wysłany"
+    }
+  },
+  "trips": {
+    "title": "Twoje podróże",
+    "new": "Nowa podróż",
+    "empty": {
+      "title": "Nie masz jeszcze żadnych podróży",
+      "description": "Stwórz pierwszą podróż, aby zacząć planować",
+      "action": "Stwórz podróż"
+    },
+    "card": {
+      "noDate": "Brak daty",
+      "countries": "{from} → {to}"
+    },
+    "form": {
+      "title": "Tytuł",
+      "titlePlaceholder": "np. Wyjazd do Budapesztu",
+      "countryFrom": "Kraj startowy",
+      "countryTo": "Kraj docelowy",
+      "dateStart": "Data rozpoczęcia",
+      "dateEnd": "Data zakończenia",
+      "notes": "Notatki",
+      "template": "Szablon",
+      "noTemplate": "Pusta podróż"
+    },
+    "tabs": {
+      "overview": "Przegląd",
+      "route": "Trasa",
+      "vignettes": "Winiety",
+      "fuel": "Paliwo",
+      "checklist": "Lista rzeczy",
+      "expenses": "Koszty",
+      "members": "Członkowie",
+      "settings": "Ustawienia"
+    },
+    "delete": {
+      "title": "Usuń podróż",
+      "description": "Ta akcja jest nieodwracalna. Usunie podróż '{title}' oraz wszystkie jej dane.",
+      "confirm": "Usuń podróż"
+    }
+  },
+  "waypoints": {
+    "title": "Trasa",
+    "add": "Dodaj punkt",
+    "empty": "Dodaj pierwszy punkt trasy",
+    "city": "Miasto",
+    "country": "Kraj",
+    "note": "Notatka"
+  },
+  "vignettes": {
+    "title": "Winiety",
+    "add": "Dodaj winietę",
+    "empty": "Dodaj winiety potrzebne na trasie",
+    "country": "Kraj",
+    "duration": "Okres",
+    "cost": "Koszt",
+    "currency": "Waluta",
+    "url": "Link do zakupu",
+    "note": "Notatka",
+    "total": "Suma"
+  },
+  "fuel": {
+    "title": "Kalkulator paliwa",
+    "carModel": "Model auta",
+    "consumption": "Spalanie (l/100 km)",
+    "tankSize": "Pojemność baku (l)",
+    "totalDistance": "Dystans (km)",
+    "startWithFullTank": "Wyjazd z pełnym bakiem",
+    "priceSegments": "Ceny paliwa per kraj",
+    "addSegment": "Dodaj kraj",
+    "results": {
+      "fuelNeeded": "Potrzebne paliwo",
+      "fuelToRefuel": "Paliwo do dotankowania",
+      "totalCost": "Łączny koszt",
+      "breakdown": "Rozbicie"
+    }
+  },
+  "checklist": {
+    "title": "Lista rzeczy",
+    "progress": "{done}/{total}",
+    "addItem": "Dodaj pozycję",
+    "addCategory": "Dodaj kategorię",
+    "categories": {
+      "documents": "Dokumenty",
+      "car": "Samochód",
+      "electronics": "Elektronika",
+      "clothing": "Ubrania",
+      "firstAid": "Apteczka",
+      "onTheRoad": "Na drogę"
+    }
+  },
+  "expenses": {
+    "title": "Koszty",
+    "add": "Dodaj koszt",
+    "category": "Kategoria",
+    "label": "Opis",
+    "amount": "Kwota",
+    "currency": "Waluta",
+    "categories": {
+      "transport": "Transport",
+      "accommodation": "Nocleg",
+      "food": "Jedzenie",
+      "activities": "Atrakcje",
+      "vignettes": "Winiety",
+      "fuel": "Paliwo",
+      "other": "Inne"
+    },
+    "summary": {
+      "title": "Podsumowanie",
+      "total": "Razem",
+      "byCategory": "Wg kategorii"
+    }
+  },
+  "members": {
+    "title": "Członkowie",
+    "invite": "Zaproś",
+    "pending": "Oczekujące zaproszenia",
+    "owner": "Właściciel",
+    "editor": "Edytor",
+    "remove": "Usuń",
+    "leave": "Opuść podróż",
+    "inviteDialog": {
+      "title": "Zaproś do podróży",
+      "email": "Email",
+      "send": "Wyślij zaproszenie",
+      "sent": "Zaproszenie wysłane"
+    }
+  },
+  "templates": {
+    "title": "Szablony",
+    "pick": "Wybierz szablon",
+    "useTemplate": "Użyj szablonu"
+  },
+  "settings": {
+    "title": "Ustawienia",
+    "profile": "Profil",
+    "displayName": "Nazwa wyświetlana",
+    "preferredLanguage": "Preferowany język",
+    "preferredCurrency": "Preferowana waluta",
+    "notifications": "Notyfikacje",
+    "emailNotifications": "Powiadomienia email",
+    "reminderDaysBefore": "Dni przed wyjazdem",
+    "theme": "Motyw",
+    "themeLight": "Jasny",
+    "themeDark": "Ciemny",
+    "themeSystem": "Systemowy"
+  },
+  "invitations": {
+    "accept": {
+      "title": "Zaproszenie do podróży",
+      "processing": "Przetwarzanie zaproszenia...",
+      "success": "Dołączyłeś do podróży",
+      "errors": {
+        "notFound": "Zaproszenie nie istnieje",
+        "expired": "Zaproszenie wygasło",
+        "emailMismatch": "Zaproszenie jest na inny adres email",
+        "alreadyProcessed": "Zaproszenie zostało już wykorzystane"
+      }
+    }
+  },
+  "pwa": {
+    "install": "Zainstaluj aplikację",
+    "installed": "Aplikacja zainstalowana"
+  },
+  "importExport": {
+    "export": "Eksportuj JSON",
+    "import": "Importuj JSON",
+    "importDialog": {
+      "title": "Importuj podróż",
+      "selectFile": "Wybierz plik JSON",
+      "invalid": "Nieprawidłowy format pliku"
+    }
+  }
+}
