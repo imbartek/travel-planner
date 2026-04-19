@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
-import { Switch } from '@/components/ui/switch'
+import { Checkbox } from '@/components/ui/checkbox'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { toast } from 'sonner'
 import { useState, useEffect } from 'react'
@@ -91,13 +91,13 @@ export default function SettingsPage() {
       <Card>
         <CardHeader><CardTitle>{t('notifications')}</CardTitle></CardHeader>
         <CardContent className="space-y-4">
-          <div className="flex items-center justify-between">
-            <Label htmlFor="emailNotif">{t('emailNotifications')}</Label>
-            <Switch
+          <div className="flex items-center gap-3">
+            <Checkbox
               id="emailNotif"
               checked={emailNotifications}
-              onCheckedChange={setEmailNotifications}
+              onCheckedChange={v => setEmailNotifications(Boolean(v))}
             />
+            <Label htmlFor="emailNotif">{t('emailNotifications')}</Label>
           </div>
           <div className="space-y-2">
             <Label htmlFor="reminderDays">{t('reminderDaysBefore')}</Label>

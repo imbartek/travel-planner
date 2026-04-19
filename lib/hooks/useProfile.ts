@@ -1,7 +1,18 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { createClient } from '@/lib/supabase/client'
 import { useAuth } from './useAuth'
+
+export interface Profile {
+  id: string
+  email: string
+  display_name: string | null
+  preferred_language: string
+  preferred_currency: string
+  email_notifications_enabled: boolean
+  reminder_days_before: number
+  created_at: string
+  updated_at: string
+}
 
 export function useProfile() {
   const supabase = createClient()
@@ -17,7 +28,7 @@ export function useProfile() {
         .eq('id', user.id)
         .single()
       if (error) throw error
-      return data
+      return data as unknown as Profile
     },
     enabled: !!user?.id,
   })
