@@ -1,11 +1,10 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
 
 import { useTemplates } from '@/lib/hooks/useTemplates'
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
 import { Check, LayoutTemplate } from 'lucide-react'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 
 interface TemplatePickerProps {
   value: string | undefined
@@ -15,6 +14,7 @@ interface TemplatePickerProps {
 export function TemplatePicker({ value, onChange }: TemplatePickerProps) {
   const { data: templates } = useTemplates()
   const t = useTranslations()
+  const locale = useLocale()
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-8">
@@ -50,11 +50,11 @@ export function TemplatePicker({ value, onChange }: TemplatePickerProps) {
         >
           <CardHeader>
             <div className="flex justify-between items-start">
-              <CardTitle className="text-base">{template.name}</CardTitle>
+              <CardTitle className="text-base">{locale === 'pl' ? template.name_pl : template.name_en}</CardTitle>
               {value === template.id && <Check className="w-4 h-4 text-primary" />}
             </div>
             <CardDescription className="line-clamp-2">
-              {template.description}
+              {locale === 'pl' ? template.description_pl : template.description_en}
             </CardDescription>
           </CardHeader>
         </Card>
