@@ -117,7 +117,7 @@ export default function SettingsPage() {
       <Card>
         <CardHeader><CardTitle>{t('theme')}</CardTitle></CardHeader>
         <CardContent>
-          <Select value={theme ?? 'system'} onValueChange={setTheme}>
+          <Select value={theme || 'system'} onValueChange={setTheme} defaultValue="system">
             <SelectTrigger className="w-48"><SelectValue /></SelectTrigger>
             <SelectContent>
               <SelectItem value="light">{t('themeLight')}</SelectItem>

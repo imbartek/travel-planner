@@ -15,8 +15,7 @@ export function useTrip(tripId: string) {
         .from('trips')
         .select(`
           *,
-          members:trip_members(user_id, role, profiles(display_name, email)),
-          checklist_stats:checklist_items(count)
+          members:trip_members(user_id, role, profiles(display_name, email))
         `)
         .eq('id', tripId)
         .single()
