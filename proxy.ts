@@ -6,9 +6,15 @@ import { updateSession } from '@/lib/supabase/middleware'
 const intlMiddleware = createIntlMiddleware(routing)
 const PUBLIC_PATHS = ['/login', '/signup', '/reset-password', '/invitations/accept']
 
+function copyCookies(from: NextResponse, to: NextResponse) {
+  from.cookies.getAll().forEach(({ name, value, ...options }) => {
+    to.cookies.set(name, value, options)
+  })
+}
+
 export default async function proxy(request: NextRequest) {
-  // 1. Refresh Supabase session
-  const { user } = await updateSession(request)
+  // 1. Refresh Supabase session — supabaseResponse carries updated cookies
+  const { supabaseResponse, user } = await updateSession(request)
 
   // 2. Process i18n routing
   const intlResponse = intlMiddleware(request)
@@ -18,28 +24,29 @@ export default async function proxy(request: NextRequest) {
   const pathnameWithoutLocale = pathname.replace(/^\/(pl|en)/, '') || '/'
   const isPublic = PUBLIC_PATHS.some((p) => pathnameWithoutLocale.startsWith(p))
 
-  // If not logged in and not on a public path, redirect to login
   if (!user && !isPublic) {
     const locale = pathname.match(/^\/(pl|en)/)?.[1] ?? 'pl'
     const url = request.nextUrl.clone()
     url.pathname = `/${locale}/login`
-    
-    // Don't set redirect param for the root page to keep URLs clean
     if (pathnameWithoutLocale !== '/') {
       url.searchParams.set('redirect', pathname)
     }
-    
-    return NextResponse.redirect(url)
+    const redirectResponse = NextResponse.redirect(url)
+    copyCookies(supabaseResponse, redirectResponse)
+    return redirectResponse
   }
 
-  // If logged in and on a public path (except invitations), redirect to trips
   if (user && isPublic && pathnameWithoutLocale !== '/invitations/accept') {
     const locale = pathname.match(/^\/(pl|en)/)?.[1] ?? 'pl'
     const url = request.nextUrl.clone()
     url.pathname = `/${locale}/trips`
-    return NextResponse.redirect(url)
+    const redirectResponse = NextResponse.redirect(url)
+    copyCookies(supabaseResponse, redirectResponse)
+    return redirectResponse
   }
 
+  // Forward refreshed Supabase cookies onto the intl response
+  copyCookies(supabaseResponse, intlResponse)
   return intlResponse
 }
 
